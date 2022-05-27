@@ -6,6 +6,7 @@ var dx = 2;
 var dy = -2;
 
 function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.beginPath();
     // Create the ball
     ctx.arc(x, y, 10, 0, Math.PI*2);
