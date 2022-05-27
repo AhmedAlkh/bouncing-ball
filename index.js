@@ -8,9 +8,11 @@ var dy = -2;
 function draw() {
     ctx.beginPath();
     // Create the ball
-    ctx.arc(220, 140, 20, 0, Math.PI*2, false);
+    ctx.arc(x, y, 10, 0, Math.PI*2);
     ctx.fillStyle = "red";
     ctx.fill();
     ctx.closePath();
+    x +=dx;
+    y +=dy;
 }
 setInterval(draw, 10);
