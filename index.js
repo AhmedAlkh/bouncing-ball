@@ -8,6 +8,11 @@ var dy = -2;
 var paddleHeight = 12;
 var paddleWidth = 72;
 var paddleX = (canvas.width - paddleWidth)/2;
+var rightPressed = false;
+var leftPressed = false;
+
+document.addEventListener('keydown', keyDownHandler, false);
+document.addEventListener('keyup', keyUpHandler, false);
 
 
 function drawBall() {
