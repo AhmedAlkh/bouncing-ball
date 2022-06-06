@@ -66,10 +66,27 @@ function drawPaddle() {
     ctx.closePath();
 }
 
+function drawBricks() {
+    for (c=0; c<brickColumnCount; c++) {
+        for (r=0; r<brickRowCount; r++) {
+            var brickX = (c*(brickWidth+brickPadding)) + brickOffsetLeft;
+            var brickY = (r*(brickHeight+brickPadding)) + brickOffsetTop;
+            bricks[c][r].x = brickX;
+            bricks[c][r].y = brickY;
+            ctx.beginPath();
+            ctx.rect(brickX, brickY, brickWidth, brickHeight);
+            ctx.fillStyle = "#6600cc";
+            ctx.fill();
+            ctx.closePath();
+        }
+    }
+}
+
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBall();
     drawPaddle();
+    drawBricks();
     if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
         dx = -dx
     } 
